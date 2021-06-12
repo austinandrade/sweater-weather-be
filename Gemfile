@@ -45,7 +45,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'rubocop-rails'
+  gem 'rubocop-rails', require: false
 end
 
 
