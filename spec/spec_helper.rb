@@ -39,7 +39,8 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
-
+  require 'webmock/rspec'
+  
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
   # compatibility in RSpec 3). It causes shared context metadata to be
@@ -96,4 +97,14 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  # Add local env's here when ready
+  # config.filter_sensitive_data('<api_key_name>') { ENV['figaro_masked_variable'] }
+  config.configure_rspec_metadata!
+  # This line lets cassettes re-record as needed
+  # config.default_cassette_options = { record: :new_episodes, re_record_interval: 7.days }
 end
