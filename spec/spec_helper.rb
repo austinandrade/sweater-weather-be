@@ -98,13 +98,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-
-VCR.configure do |config|
-  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-  config.hook_into :webmock
-  config.filter_sensitive_data('<weather>') { ENV['weather'] }
-  config.filter_sensitive_data('<mq>') { ENV['mq'] }
-  config.configure_rspec_metadata!
-  # This line lets cassettes re-record as needed
-  # config.default_cassette_options = { record: :new_episodes, re_record_interval: 7.days }
-end
