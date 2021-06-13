@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :weather, only: :show
+      resources :forecast, only: :show
     end
   end
 end
