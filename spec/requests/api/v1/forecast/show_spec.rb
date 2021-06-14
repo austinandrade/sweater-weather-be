@@ -102,5 +102,17 @@ RSpec.describe 'forecast show' do
         expect(weather[:icon]).to be_a(String)
       end
     end
+
+    it "returns 400 status when missing location param" do
+      get "/api/v1/forecast"
+
+      error_info = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response.successful?).to eq(false)
+      expect(response.status).to eq(400)
+
+      expect(error_info).to have_key(:error)
+      expect(error_info[:error]).to eq("Please include location param")
+    end
   end
 end
