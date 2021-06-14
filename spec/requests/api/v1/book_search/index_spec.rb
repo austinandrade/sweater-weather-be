@@ -70,14 +70,28 @@ RSpec.describe 'book index' do
       end
     end
 
-    it "returns 400 status when missing params or passing negative params" do
+    it "returns 400 status when missing params" do
       get "/api/v1/book-search"
 
       error_info = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.successful?).to eq(false)
       expect(response.status).to eq(400)
-      
+
+      expect(error_info).to have_key(:error)
+      expect(error_info[:error]).to eq("Please include location & non-negative quantity params")
+    end
+
+    it "returns 400 status when passing negative quantity param" do
+      params = "denver, co"
+      quantity = -1
+      get "/api/v1/book-search?location=#{params}&quantity=#{quantity}"
+
+      error_info = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response.successful?).to eq(false)
+      expect(response.status).to eq(400)
+
       expect(error_info).to have_key(:error)
       expect(error_info[:error]).to eq("Please include location & non-negative quantity params")
     end
