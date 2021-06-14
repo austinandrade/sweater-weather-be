@@ -1,4 +1,4 @@
-class BookService
+class BookSearchService
   class << self
     def get_book_data(location)
       response = conn.get("/search.json?q=#{location}")
