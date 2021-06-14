@@ -44,6 +44,10 @@ RSpec.describe 'book index' do
       expect(weather_info[:data][:attributes]).to have_key(:total_books_found)
       expect(weather_info[:data][:attributes][:total_books_found]).to be_an(Integer)
 
+      expect(weather_info[:data][:attributes]).to_not have_key(:limit)
+      expect(weather_info[:data][:attributes]).to_not have_key(:data)
+      expect(weather_info[:data][:attributes]).to_not have_key(:current_weather)
+
       expect(weather_info[:data][:attributes]).to have_key(:books)
       expect(weather_info[:data][:attributes][:books]).to be_an(Array)
       expect(weather_info[:data][:attributes][:books].count).to eq(quantity)
