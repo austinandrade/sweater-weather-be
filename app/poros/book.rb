@@ -3,7 +3,7 @@ class Book
               :id
   def initialize(data, current_weather, limit, destination)
     @id                = nil
-    @limit = limit
+    @limit             = limit
     @data              = data
     @destination       = destination
     @current_weather   = current_weather
