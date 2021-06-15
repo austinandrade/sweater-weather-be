@@ -111,7 +111,7 @@
       
 ## License
 
-Distributed under the OpenWeather, MapQuest and UnSplash Licenses. See `LICENSE` for more information.
+Distributed under the OpenWeather, MapQuest and UnSplash Licenses. See [LICENSE](https://github.com/austinandrade/sweater-weather-be/tree/main/docs/licenses) for more information.
 
 <!-- CONTACT -->
 ## Contact
