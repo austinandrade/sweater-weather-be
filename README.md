@@ -25,7 +25,7 @@
     </li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#learning-goals-&-accomplishments">Learning Goals & Accomplishments</a></li>
+    <li><a href="#learning-goals-and-accomplishments">Learning Goals & Accomplishments</a></li>
   </ol>
 </details>
   
@@ -105,7 +105,7 @@
   
   
 <!-- Learning Goals & Accomplishments -->
-## Learning Goals & Accomplishments
+## Learning Goals and Accomplishments
 
 - *TO DO:* ACCOMPLISHMENTS HERE
 
