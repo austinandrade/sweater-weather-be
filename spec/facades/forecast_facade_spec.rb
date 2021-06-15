@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe 'ForecastFacade' do
+RSpec.describe 'ForecastFacade' do
   it 'exists' do
     forecast_facade = ForecastFacade.new
     expect(forecast_facade).to be_an_instance_of(ForecastFacade)
