@@ -108,6 +108,10 @@
 ## Learning Goals and Accomplishments
 
 - *TO DO:* ACCOMPLISHMENTS HERE
+      
+## License
+
+Distributed under the OpenWeather, MapQuest and UnSplash Licenses. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
