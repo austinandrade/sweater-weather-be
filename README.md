@@ -104,7 +104,7 @@
   5. TO DO: CREATE LAST ENDPOINT AND PASTE HERE
   
   
-<!-- USAGE EXAMPLES -->
+<!-- Learning Goals & Accomplishments -->
 ## Learning Goals & Accomplishments
 
 - *TO DO:* ACCOMPLISHMENTS HERE
