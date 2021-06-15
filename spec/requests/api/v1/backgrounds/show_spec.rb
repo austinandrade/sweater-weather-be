@@ -46,7 +46,7 @@ RSpec.describe 'backgrounds show' do
       expect(photo_info[:data][:attributes][:image][:credit][:photographer_profile]).to be_a(String)
     end
 
-    it "returns 400 status when missing location param" do
+    it "returns 400 status when missing location param", :vcr do
       get "/api/v1/backgrounds"
 
       error_info = JSON.parse(response.body, symbolize_names: true)
@@ -56,6 +56,19 @@ RSpec.describe 'backgrounds show' do
 
       expect(error_info).to have_key(:error)
       expect(error_info[:error]).to eq("Please include location param")
+    end
+
+    it "returns 404 status when no locations are found", :vcr do
+      random_param = "asdfasdf"
+      get "/api/v1/backgrounds?location=#{random_param}"
+
+      error_info = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response.successful?).to eq(false)
+      expect(response.status).to eq(404)
+
+      expect(error_info).to have_key(:error)
+      expect(error_info[:error]).to eq('No images found with that location. Please try again.')
     end
   end
 end
