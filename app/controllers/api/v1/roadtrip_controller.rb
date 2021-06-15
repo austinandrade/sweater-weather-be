@@ -1,4 +1,4 @@
-class Api::V1::RoadTripController < ApplicationController
+class Api::V1::RoadtripController < ApplicationController
   def create
     trip_params = parse_body(request.raw_post)
     if trip_params[:origin] && trip_params[:destination] && trip_params[:api_key]
