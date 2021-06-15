@@ -8,15 +8,15 @@ class ForecastService
     private
 
     def conn
-     Faraday.new(url: 'https://api.openweathermap.org') do |faraday|
-       faraday.params['appid'] = ENV['weather']
-       faraday.params['exclude'] = 'minutely,alerts'
-       faraday.params['units'] = 'imperial'
-     end
-   end
+      Faraday.new(url: 'https://api.openweathermap.org') do |faraday|
+        faraday.params['appid'] = ENV['weather']
+        faraday.params['exclude'] = 'minutely,alerts'
+        faraday.params['units'] = 'imperial'
+      end
+    end
 
-   def parse_data(response)
-     JSON.parse(response.body, symbolize_names: true)
-   end
+    def parse_data(response)
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end

@@ -8,15 +8,15 @@ class BackgroundsService
     private
 
     def conn
-     Faraday.new(url: 'https://api.unsplash.com') do |faraday|
-       faraday.params['client_id'] = ENV['us']
-       faraday.params['per_page'] = 1
-       faraday.params['order_by'] = 'relevant'
-     end
-   end
+      Faraday.new(url: 'https://api.unsplash.com') do |faraday|
+        faraday.params['client_id'] = ENV['us']
+        faraday.params['per_page'] = 1
+        faraday.params['order_by'] = 'relevant'
+      end
+    end
 
-   def parse_data(response)
-     JSON.parse(response.body, symbolize_names: true)
-   end
+    def parse_data(response)
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end
