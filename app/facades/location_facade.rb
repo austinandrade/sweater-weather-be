@@ -20,7 +20,7 @@ class LocationFacade
     end
 
     def create_road_trip_objects(road_trip_data, start_city, end_city, forecast)
-      RoadTrip.new(road_trip_data, start_city, end_city, forecast)
+      Roadtrip.new(road_trip_data, start_city, end_city, forecast)
     end
   end
 end
