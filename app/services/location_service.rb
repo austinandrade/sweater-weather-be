@@ -5,6 +5,11 @@ class LocationService
       parse_data(response)
     end
 
+    def get_road_trip_data(start_city, end_city)
+      response = conn.get("/directions/v2/route?from=#{start_city}&to=#{end_city}")
+      parse_data(response)
+    end
+
     private
 
     def conn
