@@ -111,8 +111,8 @@ RSpec.describe 'forecast show' do
       expect(response.successful?).to eq(false)
       expect(response.status).to eq(400)
 
-      expect(error_info).to have_key(:error)
-      expect(error_info[:error]).to eq("Please include location param")
+      expect(error_info).to have_key(:errors)
+      expect(error_info[:errors]).to eq("Please include location param")
     end
   end
 end

@@ -5,7 +5,7 @@ class Api::V1::ForecastController < ApplicationController
       forecast = ForecastFacade.get_forecast(location_coordinates.latitude, location_coordinates.longitude)
       render json: ForecastSerializer.new(forecast)
     else
-      render json: { error: 'Please include location param' }.to_json, status: :bad_request
+      render json: { errors: 'Please include location param' }.to_json, status: :bad_request
     end
   end
 end

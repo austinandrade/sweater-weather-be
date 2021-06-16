@@ -54,8 +54,8 @@ RSpec.describe 'backgrounds show' do
       expect(response.successful?).to eq(false)
       expect(response.status).to eq(400)
 
-      expect(error_info).to have_key(:error)
-      expect(error_info[:error]).to eq("Please include location param")
+      expect(error_info).to have_key(:errors)
+      expect(error_info[:errors]).to eq("Please include location param")
     end
 
     it "returns 404 status when no locations are found", :vcr do
@@ -67,8 +67,8 @@ RSpec.describe 'backgrounds show' do
       expect(response.successful?).to eq(false)
       expect(response.status).to eq(404)
 
-      expect(error_info).to have_key(:error)
-      expect(error_info[:error]).to eq('No images found with that location. Please try again.')
+      expect(error_info).to have_key(:errors)
+      expect(error_info[:errors]).to eq('No images found with that location. Please try again.')
     end
   end
 end
