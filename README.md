@@ -33,7 +33,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-*TO DO:* PLACE DESCRIPTION HERE
+Sweater Weather is a road trip planning API. It's built for a front-end application, handling user registration, login, background wallpaper generation, and road trip creation with the weather in mind. It utilizes the [MapQuest](https://developer.mapquest.com/documentation/geocoding-api/), [OpenWeather](https://openweathermap.org/api/one-call-api) and [UnSplash](https://unsplash.com/developers) APIs to dynamically generate weather and trip information. This grants the user the ability to create a trip using a starting and ending location, and receive total drive time, and their arrival location's weather and temperature! 
 
 ### Built With
 
@@ -79,7 +79,7 @@
 7. Paste your MapQuest, OpenWeather, and UnSplash API keys as pictured
     <p align="left">
   <a href="https://github.com/austinandrade/sweater-weather-be">
-    <img src="docs/application_yml_sample.png" alt="Logo" width="500" height="200">
+    <img src="docs/application_yml_sample.png" alt="Logo" width="389" height="102">
   </a>
   
 8. Initialize rails server
@@ -101,13 +101,18 @@
   4. POST /api/v1/sessions // include: {username and password } as raw body data
       attemps to login the user with passed data and returns email and api_key of existing user if successful.
       
-  5. TO DO: CREATE LAST ENDPOINT AND PASTE HERE
+  5. POST /api/v1/road_trip // include: {origin, destination, and api_key} as raw body data.
+      returns travel time, weather, and temperature information if the api_key sent is valid and the route is possible. 
   
   
 <!-- Learning Goals & Accomplishments -->
 ## Learning Goals and Accomplishments
 
-- *TO DO:* ACCOMPLISHMENTS HERE
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Research, select, and consume an API based on your needs as a developer
       
 ## License
 
