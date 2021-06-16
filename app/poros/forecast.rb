@@ -1,12 +1,14 @@
 class Forecast
-  attr_reader :id
+  attr_reader :id,
+              :road_trip_weather
 
   def initialize(weather_data)
-    @id              = nil
-    @weather_data    = weather_data
-    @current_weather = current_weather
-    @daily_weather   = daily_weather
-    @hourly_weather  = hourly_weather
+    @id                = nil
+    @weather_data      = weather_data
+    @current_weather   = current_weather
+    @daily_weather     = daily_weather
+    @hourly_weather    = hourly_weather
+    @road_trip_weather = road_trip_weather
   end
 
   def current_weather
@@ -39,7 +41,18 @@ class Forecast
   end
 
   def hourly_weather
-    @weather_data[:hourly][0..7].map do |hour_data|
+    @weather_data[:hourly][1..8].map do |hour_data|
+      {
+        time: format_epoch_time(hour_data[:dt]).strftime('%T'),
+        temperature: hour_data[:temp],
+        conditions: hour_data[:weather][0][:description],
+        icon: hour_data[:weather][0][:icon]
+      }
+    end
+  end
+
+  def road_trip_weather
+    @weather_data[:hourly].map do |hour_data|
       {
         time: format_epoch_time(hour_data[:dt]).strftime('%T'),
         temperature: hour_data[:temp],
@@ -50,6 +63,6 @@ class Forecast
   end
 
   def format_epoch_time(epoch_time)
-    Time.zone.at(epoch_time)
+    Time.at(epoch_time)
   end
 end
